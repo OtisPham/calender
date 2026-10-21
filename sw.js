@@ -1,4 +1,4 @@
-const CACHE_NAME = 'amlich-dayhoc-v8';
+const CACHE_NAME = 'amlich-dayhoc-v9';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

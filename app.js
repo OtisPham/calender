@@ -886,7 +886,7 @@ function renderMonthCalendar() {
     for (let i = startDayOfWeek - 1; i >= 0; i--) {
         const prevDay = prevDaysInMonth - i;
         const cell = document.createElement('div');
-        cell.className = 'min-h-[105px] md:min-h-[120px] p-2 bg-slate-50/60 rounded-xl border border-slate-100 opacity-40 text-slate-400 flex flex-col justify-between';
+        cell.className = 'min-h-[75px] sm:min-h-[105px] md:min-h-[120px] p-1.5 sm:p-2 bg-slate-50/60 rounded-xl border border-slate-100 opacity-40 text-slate-400 flex flex-col justify-between';
         cell.innerHTML = `
             <div class="flex justify-between items-center text-xs">
                 <span class="font-semibold">${prevDay}</span>
@@ -948,12 +948,13 @@ function renderMonthCalendar() {
         }
 
         const cell = document.createElement('div');
-        cell.className = `min-h-[110px] md:min-h-[125px] p-2 bg-white rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between hover:shadow-md hover:border-emerald-300 relative group ${
+        cell.className = `min-h-[75px] sm:min-h-[105px] md:min-h-[125px] p-1.5 sm:p-2 bg-white rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between hover:shadow-md hover:border-emerald-300 relative group ${
             isToday ? 'border-2 border-emerald-600 bg-emerald-50/20 shadow-sm' : hasDayConflict ? 'border-red-300 bg-red-50/20' : 'border-slate-200/80'
         }`;
 
         let eventsHtml = '';
-        dayEvents.slice(0, 3).forEach(ev => {
+        const maxSlice = window.innerWidth < 640 ? 2 : 3;
+        dayEvents.slice(0, maxSlice).forEach(ev => {
             let badgeBg = 'bg-slate-100 text-slate-700 border-slate-200';
             let icon = '•';
             let extraMoney = '';
@@ -971,7 +972,7 @@ function renderMonthCalendar() {
                     : 'bg-blue-50 text-blue-800 border-blue-200';
                 icon = isConflict ? '⚠️' : (ev.jobType === 'trial' ? '🎯' : '📚');
                 if (ev.salaryInfo) {
-                    extraMoney = `<span class="font-bold text-emerald-800 ml-auto font-mono text-[10px]">${formatCurrencyShort(ev.salaryInfo.salary)}</span>`;
+                    extraMoney = `<span class="hidden sm:inline font-bold text-emerald-800 ml-auto font-mono text-[10px]">${formatCurrencyShort(ev.salaryInfo.salary)}</span>`;
                 }
             } else if (ev.category === 'personal') {
                 badgeBg = 'bg-amber-50 text-amber-800 border-amber-200';
@@ -979,7 +980,7 @@ function renderMonthCalendar() {
             }
 
             eventsHtml += `
-                <div class="px-1.5 py-0.5 rounded-lg border text-[11px] flex items-center gap-1 ${badgeBg}" title="${ev.title} (${ev.startTime}-${ev.endTime}) - ${ev.branch || ''}">
+                <div class="px-1 sm:px-1.5 py-0.5 rounded-md sm:rounded-lg border text-[9px] sm:text-[11px] flex items-center gap-1 ${badgeBg}" title="${ev.title} (${ev.startTime}-${ev.endTime}) - ${ev.branch || ''}">
                     <span>${icon}</span>
                     <span class="truncate">${ev.startTime} ${ev.title}</span>
                     ${extraMoney}
@@ -987,34 +988,34 @@ function renderMonthCalendar() {
             `;
         });
 
-        if (dayEvents.length > 3) {
+        if (dayEvents.length > maxSlice) {
             eventsHtml += `
-                <div class="text-[10px] text-slate-500 font-medium pl-1">
-                    +${dayEvents.length - 3} sự kiện nữa...
+                <div class="text-[9px] sm:text-[10px] text-slate-500 font-medium pl-0.5 sm:pl-1">
+                    +${dayEvents.length - maxSlice} sự kiện nữa...
                 </div>
             `;
         }
 
         cell.innerHTML = `
             <div>
-                <div class="flex justify-between items-center mb-1.5">
-                    <div class="flex items-center gap-1.5">
-                        <span class="text-sm md:text-base font-bold ${isToday ? 'text-emerald-800' : 'text-slate-800'}">${d}</span>
-                        ${isToday ? '<span class="px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-emerald-700 text-white uppercase tracking-wider">Hôm nay</span>' : ''}
+                <div class="flex justify-between items-center mb-1 sm:mb-1.5">
+                    <div class="flex items-center gap-1 sm:gap-1.5">
+                        <span class="text-xs sm:text-sm md:text-base font-bold ${isToday ? 'text-emerald-800' : 'text-slate-800'}">${d}</span>
+                        ${isToday ? '<span class="hidden sm:inline px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-emerald-700 text-white uppercase tracking-wider">Hôm nay</span>' : ''}
                     </div>
-                    <div class="text-xs flex items-center gap-0.5">
-                        ${specialIcon ? `<span class="text-[11px]">${specialIcon}</span>` : ''}
+                    <div class="text-[10px] sm:text-xs flex items-center gap-0.5">
+                        ${specialIcon ? `<span class="text-[10px] sm:text-[11px]">${specialIcon}</span>` : ''}
                         ${lunarText}
                     </div>
                 </div>
-                <div class="space-y-1">
+                <div class="space-y-0.5 sm:space-y-1">
                     ${eventsHtml}
                 </div>
             </div>
             ${hasDayConflict ? `
-                <div class="mt-1 flex items-center gap-1 text-[10px] font-semibold text-red-600 bg-red-100/80 px-1.5 py-0.5 rounded-md">
+                <div class="mt-1 flex items-center gap-1 text-[9px] sm:text-[10px] font-semibold text-red-600 bg-red-100/80 px-1 sm:px-1.5 py-0.5 rounded-md">
                     <span>⚠️</span>
-                    <span>Xung đột 30p!</span>
+                    <span class="hidden sm:inline">Xung đột 30p!</span>
                 </div>
             ` : ''}
         `;
@@ -1027,7 +1028,7 @@ function renderMonthCalendar() {
     const remaining = (7 - (totalRendered % 7)) % 7;
     for (let nextDay = 1; nextDay <= remaining; nextDay++) {
         const cell = document.createElement('div');
-        cell.className = 'min-h-[105px] md:min-h-[120px] p-2 bg-slate-50/60 rounded-xl border border-slate-100 opacity-40 text-slate-400 flex flex-col justify-between';
+        cell.className = 'min-h-[75px] sm:min-h-[105px] md:min-h-[120px] p-1.5 sm:p-2 bg-slate-50/60 rounded-xl border border-slate-100 opacity-40 text-slate-400 flex flex-col justify-between';
         cell.innerHTML = `
             <div class="flex justify-between items-center text-xs">
                 <span class="font-semibold">${nextDay}</span>
@@ -1075,9 +1076,9 @@ function renderWeekCalendar() {
         }
 
         const col = document.createElement('div');
-        col.className = `p-3 rounded-2xl border transition-all ${
+        col.className = `p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border transition-all ${
             isToday ? 'border-emerald-600 bg-emerald-50/30 ring-1 ring-emerald-600' : 'border-slate-200 bg-white'
-        } flex flex-col min-h-[300px]`;
+        } flex flex-col min-h-[140px] sm:min-h-[220px] md:min-h-[300px]`;
 
         let evListHtml = '';
         if (dayEvents.length === 0) {

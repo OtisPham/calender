@@ -119,43 +119,43 @@
             </div>
 
             <!-- Quick Stats Bar (Bao gồm Tổng Lương Tháng) -->
-            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-3 pt-3 border-t border-emerald-700/60 text-xs">
-                <div class="flex items-center gap-2 bg-emerald-950/40 px-3 py-2 rounded-xl border border-emerald-700/40">
-                    <span class="text-lg">🕊️</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 sm:gap-2 mt-3 pt-3 border-t border-emerald-700/60 text-xs">
+                <div class="flex items-center gap-2 bg-emerald-950/40 p-2 sm:px-3 sm:py-2 rounded-xl border border-emerald-700/40">
+                    <span class="text-base sm:text-lg">🕊️</span>
                     <div>
-                        <div class="text-[10px] text-emerald-300 uppercase font-semibold">Phóng Sanh</div>
-                        <div class="font-bold text-white text-sm"><span id="stat-ps-count">0</span> buổi <span class="text-[9px] font-normal text-emerald-300">(CN sau Rằm)</span></div>
+                        <div class="text-[9px] sm:text-[10px] text-emerald-300 uppercase font-semibold">Phóng Sanh</div>
+                        <div class="font-bold text-white text-xs sm:text-sm"><span id="stat-ps-count">0</span> buổi <span class="hidden sm:inline text-[9px] font-normal text-emerald-300">(CN sau Rằm)</span></div>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 bg-emerald-950/40 px-3 py-2 rounded-xl border border-emerald-700/40">
-                    <span class="text-lg">📿</span>
+                <div class="flex items-center gap-2 bg-emerald-950/40 p-2 sm:px-3 sm:py-2 rounded-xl border border-emerald-700/40">
+                    <span class="text-base sm:text-lg">📿</span>
                     <div>
-                        <div class="text-[10px] text-purple-300 uppercase font-semibold">Sám Hối</div>
-                        <div class="font-bold text-white text-sm"><span id="stat-sh-count">0</span> buổi <span class="text-[9px] font-normal text-purple-300">(16h-20h)</span></div>
+                        <div class="text-[9px] sm:text-[10px] text-purple-300 uppercase font-semibold">Sám Hối</div>
+                        <div class="font-bold text-white text-xs sm:text-sm"><span id="stat-sh-count">0</span> buổi <span class="hidden sm:inline text-[9px] font-normal text-purple-300">(16h-20h)</span></div>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 bg-emerald-950/40 px-3 py-2 rounded-xl border border-emerald-700/40">
-                    <span class="text-lg">📚</span>
+                <div class="flex items-center gap-2 bg-emerald-950/40 p-2 sm:px-3 sm:py-2 rounded-xl border border-emerald-700/40">
+                    <span class="text-base sm:text-lg">📚</span>
                     <div>
-                        <div class="text-[10px] text-blue-300 uppercase font-semibold">Lịch Dạy</div>
-                        <div class="font-bold text-white text-sm"><span id="stat-teach-count">0</span> buổi dạy</div>
+                        <div class="text-[9px] sm:text-[10px] text-blue-300 uppercase font-semibold">Lịch Dạy</div>
+                        <div class="font-bold text-white text-xs sm:text-sm"><span id="stat-teach-count">0</span> buổi dạy</div>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 bg-emerald-950/40 px-3 py-2 rounded-xl border border-emerald-700/40">
-                    <span class="text-lg">📌</span>
+                <div class="flex items-center gap-2 bg-emerald-950/40 p-2 sm:px-3 sm:py-2 rounded-xl border border-emerald-700/40">
+                    <span class="text-base sm:text-lg">📌</span>
                     <div>
-                        <div class="text-[10px] text-amber-300 uppercase font-semibold">Sự Kiện Cá Nhân</div>
-                        <div class="font-bold text-white text-sm"><span id="stat-personal-count">0</span> sự kiện</div>
+                        <div class="text-[9px] sm:text-[10px] text-amber-300 uppercase font-semibold">Sự Kiện Cá Nhân</div>
+                        <div class="font-bold text-white text-xs sm:text-sm"><span id="stat-personal-count">0</span> sự kiện</div>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 bg-emerald-950/70 px-3 py-2 rounded-xl border-2 border-emerald-400/50 shadow-inner col-span-2 sm:col-span-1 cursor-pointer hover:bg-emerald-900 transition-colors" onclick="setViewMode('salary')">
-                    <span class="text-xl">💰</span>
+                <div class="flex items-center gap-2 bg-emerald-950/70 p-2 sm:px-3 sm:py-2 rounded-xl border-2 border-emerald-400/50 shadow-inner col-span-2 sm:col-span-1 cursor-pointer hover:bg-emerald-900 transition-colors" onclick="setViewMode('salary')">
+                    <span class="text-lg sm:text-xl">💰</span>
                     <div>
-                        <div class="text-[10px] text-emerald-200 uppercase font-extrabold flex items-center gap-1">
+                        <div class="text-[9px] sm:text-[10px] text-emerald-200 uppercase font-extrabold flex items-center gap-1">
                             <span>LƯƠNG THÁNG NÀY</span>
                             <span class="text-[8px] bg-emerald-500/40 px-1 rounded">Rank T0</span>
                         </div>
-                        <div class="font-extrabold text-white text-sm tracking-tight font-mono" id="stat-month-salary">0 ₫</div>
+                        <div class="font-extrabold text-white text-xs sm:text-sm tracking-tight font-mono" id="stat-month-salary">0 ₫</div>
                     </div>
                 </div>
             </div>
@@ -273,19 +273,19 @@
                 </div>
             </div>
 
-            <!-- Days of Week Header -->
-            <div class="grid grid-cols-7 gap-1.5 md:gap-2.5 text-center font-bold text-xs uppercase tracking-wider text-slate-500">
-                <div class="p-2 bg-slate-100/70 rounded-xl">Thứ 2</div>
-                <div class="p-2 bg-slate-100/70 rounded-xl">Thứ 3</div>
-                <div class="p-2 bg-slate-100/70 rounded-xl">Thứ 4</div>
-                <div class="p-2 bg-slate-100/70 rounded-xl">Thứ 5</div>
-                <div class="p-2 bg-slate-100/70 rounded-xl">Thứ 6</div>
-                <div class="p-2 bg-slate-100/70 rounded-xl text-emerald-800">Thứ 7</div>
-                <div class="p-2 bg-red-50 text-red-700 rounded-xl">Chủ Nhật</div>
+            <!-- Days of Week Header (Linh hoạt hiển thị theo kích thước màn hình) -->
+            <div class="grid grid-cols-7 gap-1 sm:gap-1.5 md:gap-2.5 text-center font-bold text-[11px] sm:text-xs uppercase tracking-wider text-slate-500">
+                <div class="py-1.5 sm:py-2 px-1 bg-slate-100/70 rounded-lg sm:rounded-xl"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Thứ 2</span></div>
+                <div class="py-1.5 sm:py-2 px-1 bg-slate-100/70 rounded-lg sm:rounded-xl"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Thứ 3</span></div>
+                <div class="py-1.5 sm:py-2 px-1 bg-slate-100/70 rounded-lg sm:rounded-xl"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Thứ 4</span></div>
+                <div class="py-1.5 sm:py-2 px-1 bg-slate-100/70 rounded-lg sm:rounded-xl"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Thứ 5</span></div>
+                <div class="py-1.5 sm:py-2 px-1 bg-slate-100/70 rounded-lg sm:rounded-xl"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Thứ 6</span></div>
+                <div class="py-1.5 sm:py-2 px-1 bg-slate-100/70 rounded-lg sm:rounded-xl text-emerald-800"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Thứ 7</span></div>
+                <div class="py-1.5 sm:py-2 px-1 bg-red-50 text-red-700 rounded-lg sm:rounded-xl"><span class="sm:hidden">CN</span><span class="hidden sm:inline">Chủ Nhật</span></div>
             </div>
 
             <!-- Calendar Grid Container -->
-            <div id="calendar-grid" class="grid grid-cols-7 gap-1.5 md:gap-2.5"></div>
+            <div id="calendar-grid" class="grid grid-cols-7 gap-1 sm:gap-1.5 md:gap-2.5"></div>
 
             <!-- Legend Info -->
             <div class="bg-white p-4 rounded-2xl border border-slate-200 text-xs text-slate-600 flex flex-wrap items-center justify-between gap-3">
@@ -529,7 +529,7 @@
 
                     <!-- Submit Button -->
                     <div class="md:col-span-3 pt-2 flex items-center justify-end gap-3">
-                        <button type="submit" class="px-6 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2 active:scale-98">
+                        <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 active:scale-98 cursor-pointer">
                             <span>✨</span>
                             <span>Tạo & Phân Tích 14 Tuần (Kèm Tiền Lương)</span>
                         </button>
@@ -585,30 +585,30 @@
     </footer>
 
     <!-- MODAL 1: BẢNG PREVIEW 14 TUẦN & XÁC NHẬN LƯU -->
-    <div id="teach-preview-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white w-full max-w-4xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8 max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-200">
-            <div class="px-6 py-4 bg-emerald-900 text-white flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                    <span class="text-2xl">📋</span>
+    <div id="teach-preview-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-4xl rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-2 sm:my-8 max-h-[94vh] sm:max-h-[90vh] flex flex-col duration-200">
+            <div class="px-4 sm:px-6 py-3 sm:py-4 bg-emerald-900 text-white flex items-center justify-between">
+                <div class="flex items-center gap-2 sm:gap-2.5">
+                    <span class="text-xl sm:text-2xl">📋</span>
                     <div>
-                        <h3 class="font-bold text-base">Kết Quả Phân Tích 14 Buổi Dạy Học & Lương Ước Tính</h3>
-                        <p class="text-xs text-emerald-200">Kiểm tra chi tiết từng tuần theo quy tắc 30 phút, lịch Sám hối và tính lương MindX</p>
+                        <h3 class="font-bold text-sm sm:text-base">Kết Quả Phân Tích 14 Buổi Dạy Học & Lương Ước Tính</h3>
+                        <p class="text-[11px] sm:text-xs text-emerald-200">Kiểm tra chi tiết từng tuần theo quy tắc 30 phút, lịch Sám hối và tính lương MindX</p>
                     </div>
                 </div>
                 <button onclick="closeTeachPreviewModal()" class="text-emerald-200 hover:text-white p-1 rounded-lg">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
-            <div id="teach-preview-container" class="p-6 overflow-y-auto space-y-4 flex-1"></div>
-            <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between gap-3">
+            <div id="teach-preview-container" class="p-3.5 sm:p-6 overflow-y-auto space-y-4 flex-1"></div>
+            <div class="px-4 sm:px-6 py-3 sm:py-4 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div class="text-xs text-slate-500">
                     * Các buổi bị xung đột được đánh dấu màu đỏ nổi bật.
                 </div>
-                <div class="flex items-center gap-2">
-                    <button onclick="closeTeachPreviewModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-100 transition-colors">
+                <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                    <button onclick="closeTeachPreviewModal()" class="w-full sm:w-auto px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-100 transition-colors">
                         Hủy Bỏ
                     </button>
-                    <button onclick="confirmSaveTeachingCourse()" class="px-5 py-2 rounded-xl text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-sm transition-all flex items-center gap-1.5">
+                    <button onclick="confirmSaveTeachingCourse()" class="w-full sm:w-auto px-5 py-2 rounded-xl text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-sm transition-all flex items-center justify-center gap-1.5">
                         <span>💾</span>
                         <span>Xác Nhận Lưu Vào Lịch</span>
                     </button>
@@ -618,18 +618,18 @@
     </div>
 
     <!-- MODAL 2: CHI TIẾT NGÀY & THÊM SỰ KIỆN CÁ NHÂN -->
-    <div id="day-detail-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8 max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-200">
-            <div class="px-6 py-4 bg-gradient-to-r from-emerald-800 to-teal-800 text-white flex items-center justify-between">
+    <div id="day-detail-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-2xl rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-2 sm:my-8 max-h-[94vh] sm:max-h-[90vh] flex flex-col duration-200">
+            <div class="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-emerald-800 to-teal-800 text-white flex items-center justify-between">
                 <div>
-                    <h3 id="modal-date-title" class="font-bold text-lg">Ngày --/--/----</h3>
+                    <h3 id="modal-date-title" class="font-bold text-base sm:text-lg">Ngày --/--/----</h3>
                     <p id="modal-lunar-title" class="text-xs text-emerald-200 font-medium mt-0.5">Âm lịch: --/--</p>
                 </div>
                 <button onclick="closeDayDetailModal()" class="text-emerald-200 hover:text-white p-1 rounded-lg">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
-            <div class="p-6 overflow-y-auto space-y-6 flex-1">
+            <div class="p-3.5 sm:p-6 overflow-y-auto space-y-4 sm:space-y-6 flex-1">
                 <div>
                     <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                         <span>📋</span>
@@ -683,7 +683,7 @@
     <div id="toast" class="fixed bottom-6 right-6 px-5 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 z-50 transform translate-y-10 opacity-0 pointer-events-none"></div>
 
     <!-- SCRIPTS (Kèm versioning để luôn tải mã nguồn mới nhất) -->
-    <script src="amlich.js?v=8"></script>
-    <script src="app.js?v=8"></script>
+    <script src="amlich.js?v=9"></script>
+    <script src="app.js?v=9"></script>
 </body>
 </html>
